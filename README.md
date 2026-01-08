@@ -6,8 +6,8 @@ A full-stack personal finance management application to track income, expenses, 
 
 ## 🌐 Live Demo
 
-- **Frontend**: Coming Soon
-- **Backend API**: Coming Soon
+- **Frontend**: Deploy on Vercel (Instructions below)
+- **Backend API**: Deploy on Render (Instructions below)
 - **GitHub Repository**: [https://github.com/Arjun421/Budget_Buddy](https://github.com/Arjun421/Budget_Buddy)
 
 ---
@@ -218,8 +218,8 @@ Frontend will run on `http://localhost:3000`
 ## 📚 API Documentation
 
 ### Base URL
-- **Local**: `http://localhost:4000`
-- **Production**: Coming Soon
+- **Local Development**: `http://localhost:4000`
+- **Production (Render)**: `https://your-app-name.onrender.com` (Replace with your actual Render URL)
 
 ### Authentication Endpoints
 
@@ -330,31 +330,126 @@ DELETE /api/budget/:id
 
 ---
 
-## 🌍 Deployment
+## 🚀 Deployment
 
-### Backend (Render)
+### Backend Deployment on Render
 
-1. Create a new Web Service on Render
-2. Connect your GitHub repository
-3. Configure:
-   - **Root Directory**: `backend`
-   - **Build Command**: `npm install && npx prisma generate`
-   - **Start Command**: `node server.js`
-4. Add environment variables:
-   - `DATABASE_URL`
-   - `JWT_SECRET`
-   - `PORT=4000`
-   - `NODE_ENV=production`
+1. **Create a Render Account**
+   - Go to [render.com](https://render.com) and sign up
+   - Connect your GitHub account
 
-### Frontend (Vercel)
+2. **Create a New Web Service**
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository: `https://github.com/Arjun421/Budget_Buddy`
+   - Select the repository from the list
 
-1. Import your GitHub repository to Vercel
-2. Configure:
-   - **Root Directory**: `frontend`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-3. Add environment variable:
-   - `VITE_API_URL=https://your-backend-url.onrender.com`
+3. **Configure Web Service Settings**
+
+   **Basic Settings:**
+   ```
+   Name: budget-buddy-backend
+   Region: Oregon (US West) or Singapore (closest to you)
+   Branch: main
+   Root Directory: backend
+   Runtime: Node
+   ```
+
+   **Build & Deploy Settings:**
+   ```
+   Build Command: npm install && npx prisma generate && npx prisma db push
+   Start Command: node server.js
+   ```
+
+   **Instance Type:**
+   ```
+   Free (for testing) or Starter ($7/month for better performance)
+   ```
+
+4. **Environment Variables**
+   
+   Add these environment variables in Render dashboard:
+   
+   ```env
+   DATABASE_URL=postgresql://neondb_owner:npg_VDmB5An3LGCk@ep-snowy-shadow-adkhncha-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+   
+   JWT_SECRET=your-super-secret-jwt-key-change-this-in-production-make-it-long-and-random
+   
+   PORT=4000
+   
+   NODE_ENV=production
+   
+   CORS_ORIGIN=https://your-frontend-url.vercel.app
+   ```
+
+   **Important Notes:**
+   - Replace `JWT_SECRET` with a strong, random string (at least 32 characters)
+   - Update `CORS_ORIGIN` with your actual Vercel frontend URL after deployment
+   - The `DATABASE_URL` is your existing Neon PostgreSQL connection string
+
+5. **Deploy**
+   - Click "Create Web Service"
+   - Render will automatically build and deploy your backend
+   - Wait for the build to complete (usually 2-3 minutes)
+   - Your backend will be available at: `https://budget-buddy-backend.onrender.com`
+
+### Frontend Deployment on Vercel
+
+1. **Create a Vercel Account**
+   - Go to [vercel.com](https://vercel.com) and sign up
+   - Connect your GitHub account
+
+2. **Import Project**
+   - Click "New Project"
+   - Import your GitHub repository: `Budget_Buddy`
+   - Select the repository
+
+3. **Configure Project Settings**
+
+   **Framework Preset:** Vite
+   
+   **Root Directory:** `frontend`
+   
+   **Build Settings:**
+   ```
+   Build Command: npm run build
+   Output Directory: dist
+   Install Command: npm install
+   ```
+
+4. **Environment Variables**
+   
+   Add this environment variable in Vercel dashboard:
+   ```env
+   VITE_API_URL=https://budget-buddy-backend.onrender.com
+   ```
+   
+   **Note:** Replace with your actual Render backend URL after backend deployment
+
+5. **Deploy**
+   - Click "Deploy"
+   - Vercel will build and deploy your frontend
+   - Your frontend will be available at: `https://budget-buddy-frontend.vercel.app`
+
+### Post-Deployment Steps
+
+1. **Update CORS Origin**
+   - After frontend deployment, update the `CORS_ORIGIN` environment variable in Render
+   - Set it to your actual Vercel URL (e.g., `https://budget-buddy-frontend.vercel.app`)
+   - Redeploy the backend service
+
+2. **Test the Application**
+   - Visit your Vercel frontend URL
+   - Test user registration and login
+   - Verify all features are working correctly
+
+### Deployment Checklist
+
+- [ ] Backend deployed on Render with correct environment variables
+- [ ] Frontend deployed on Vercel with correct API URL
+- [ ] CORS origin updated in backend
+- [ ] Database connection working
+- [ ] Authentication flow tested
+- [ ] All API endpoints responding correctly
 
 ---
 
