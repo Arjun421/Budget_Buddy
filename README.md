@@ -6,28 +6,32 @@ A full-stack personal finance management application to track income, expenses, 
 
 ## 🌐 Live Demo
 
-- **Frontend**: [https://capstone-sem3-green.vercel.app](https://capstone-sem3-green.vercel.app)
-- **Backend API**: [https://capstone-sem3-wjbw.onrender.com](https://capstone-sem3-wjbw.onrender.com)
-- **API Health Check**: [https://capstone-sem3-wjbw.onrender.com/api/health](https://capstone-sem3-wjbw.onrender.com/api/health)
-
-> **Note**: Backend is hosted on Render's free tier, so the first request may take ~30 seconds to wake up the server.
+- **Frontend**: Coming Soon
+- **Backend API**: Coming Soon
+- **GitHub Repository**: [https://github.com/Arjun421/Budget_Buddy](https://github.com/Arjun421/Budget_Buddy)
 
 ---
 
-## � Table of Contents
+## 📋 Table of Contents
 
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
 - [Project Structure](#-project-structure)
 - [Local Setup](#-local-setup)
 - [API Documentation](#-api-documentation)
-- [Deployment](#-deployment)
 - [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
 
 ---
 
 ## ✨ Features
+
+### 🏠 Landing Experience
+- 🎨 Beautiful home page with comprehensive budgeting information
+- 📖 Interactive welcome/onboarding flow
+- 💡 Educational content about why budgeting matters
+- 👥 Success stories and testimonials
+- ❓ FAQ section for common questions
 
 ### Authentication & Security
 - 🔐 JWT-based authentication (Login/Signup)
@@ -62,9 +66,10 @@ A full-stack personal finance management application to track income, expenses, 
 ### UI/UX
 - 🎨 Clean, modern UI with Tailwind CSS
 - 📱 Fully responsive design
-- 🌈 Color scheme: Emerald & Teal gradients (no purple!)
+- 🌈 Color scheme: Emerald & Teal gradients
 - ⚡ Fast and smooth animations
 - 📊 Interactive charts using Recharts library
+- 🇮🇳 Indian context with ₹ currency support
 
 ---
 
@@ -76,7 +81,7 @@ A full-stack personal finance management application to track income, expenses, 
 - **Styling**: Tailwind CSS
 - **Charts**: Recharts
 - **Build Tool**: Vite
-- **Deployment**: Vercel
+- **Deployment**: Vercel (Coming Soon)
 
 ### Backend
 - **Runtime**: Node.js
@@ -85,19 +90,20 @@ A full-stack personal finance management application to track income, expenses, 
 - **Database**: PostgreSQL (Neon)
 - **Authentication**: JWT (jsonwebtoken)
 - **Password Hashing**: bcryptjs
-- **Deployment**: Render
+- **Deployment**: Render (Coming Soon)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Capstone_Sem3/
+Budget_Buddy/
 ├── backend/
 │   ├── middleware/
 │   │   └── auth.js              # JWT authentication middleware
 │   ├── prisma/
-│   │   └── schema.prisma        # Database schema
+│   │   ├── schema.prisma        # Database schema
+│   │   └── migrations/          # Database migrations
 │   ├── routes/
 │   │   ├── auth.js              # Authentication routes
 │   │   ├── transaction.js       # Transaction CRUD & stats
@@ -112,6 +118,8 @@ Capstone_Sem3/
 │   │   ├── config/
 │   │   │   └── api.js           # API URL configuration
 │   │   ├── pages/
+│   │   │   ├── Home.jsx         # Landing page
+│   │   │   ├── Welcome.jsx      # Onboarding flow
 │   │   │   ├── Login.jsx        # Login page
 │   │   │   ├── Signup.jsx       # Signup page
 │   │   │   ├── Dashboard.jsx    # Dashboard with analytics
@@ -141,8 +149,8 @@ Capstone_Sem3/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/vidhisinghal0101/Capstone_Sem3.git
-cd Capstone_Sem3/backend
+git clone https://github.com/Arjun421/Budget_Buddy.git
+cd Budget_Buddy/backend
 ```
 
 2. **Install dependencies**
@@ -211,7 +219,7 @@ Frontend will run on `http://localhost:3000`
 
 ### Base URL
 - **Local**: `http://localhost:4000`
-- **Production**: `https://capstone-sem3-wjbw.onrender.com`
+- **Production**: Coming Soon
 
 ### Authentication Endpoints
 
@@ -389,8 +397,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 👨‍💻 Author
 
-**Vidhi Singhal**
-- GitHub: [@vidhisinghal0101](https://github.com/vidhisinghal0101)
+**Arjun Singh**
+- GitHub: [@Arjun421](https://github.com/Arjun421)
+- Repository: [Budget_Buddy](https://github.com/Arjun421/Budget_Buddy)
 
 ---
 
@@ -402,12 +411,11 @@ This project is open source and available under the MIT License.
 
 ## 🙏 Acknowledgments
 
-- Built as part of Capstone Project Semester 3
+- Built with modern web technologies
 - Neon for PostgreSQL database hosting
-- Vercel for frontend hosting
-- Render for backend hosting
+- Tailwind CSS for beautiful styling
+- Recharts for interactive data visualization
 
 ---
 
-**Made with ❤️ using React, Node.js, and Prisma**
-# Budget_Buddy
+**Made with ❤️ by Arjun Singh using React, Node.js, and Prisma**
