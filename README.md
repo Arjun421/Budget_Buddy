@@ -6,8 +6,8 @@ A full-stack personal finance management application to track income, expenses, 
 
 ## 🌐 Live Demo
 
-- **Frontend**: Deploy on Vercel (Instructions below)
-- **Backend API**: Deploy on Render (Instructions below)
+- **Frontend**: [https://budget-buddy-alpha-five.vercel.app](https://budget-buddy-alpha-five.vercel.app)
+- **Backend API**: [https://budget-buddy-w2aq.onrender.com](https://budget-buddy-w2aq.onrender.com)
 - **GitHub Repository**: [https://github.com/Arjun421/Budget_Buddy](https://github.com/Arjun421/Budget_Buddy)
 
 ---
@@ -219,7 +219,7 @@ Frontend will run on `http://localhost:3000`
 
 ### Base URL
 - **Local Development**: `http://localhost:4000`
-- **Production (Render)**: `https://your-app-name.onrender.com` (Replace with your actual Render URL)
+- **Production (Render)**: `https://budget-buddy-w2aq.onrender.com`
 
 ### Authentication Endpoints
 
